@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import Sidebar from './components/Sidebar'
 import About from './pages/About'
@@ -11,14 +11,21 @@ import GameOfLifeBackground from './components/GameOfLifeBackground'
 import HelpButton from './components/HelpButton'
 
 export default function App() {
-    // 1. Get the current location object
     const location = useLocation();
-
-    // 2. Check if the current pathname is exactly the root ("/")
-    const isMain = location.pathname === '/';
-
-    // State to track if the sidebar drawer is open on mobile views
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+    // 1. Monitor screen resizing to dynamically catch mobile state
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    // 2. ONLY hide the header if we are on the root route AND the user is on a mobile phone
+    const isMainAndMobile = location.pathname === '/' && isMobile;
 
     const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
     const closeSidebar = () => setIsSidebarOpen(false);
@@ -27,14 +34,13 @@ export default function App() {
         <div className="app-layout">
             <GameOfLifeBackground />
 
-            {/* Mobile-only hamburger toggle button */}
             <button className="sidebar-toggle" onClick={toggleSidebar}>
                 {isSidebarOpen ? '✕' : '☰'}
             </button>
 
-            {/* 3. Pass both onMain and mobile visibility props down */}
+            {/* 3. Pass down the updated boolean logic */}
             <Sidebar
-                onMain={isMain}
+                onMain={isMainAndMobile}
                 isOpen={isSidebarOpen}
                 onToggle={closeSidebar}
             />
