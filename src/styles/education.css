@@ -1,0 +1,43 @@
+/* Education Container Mapping */
+.education-card {
+    margin-bottom: 1.5rem;
+}
+
+.education-card h2 {
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.date {
+    color: #ffffff;
+    font-weight: 900;
+    font-size: 0.9rem;
+}
+
+.education-card .company {
+    color: #888;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.education-card ul {
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.education-card li {
+    margin-bottom: 0.4rem;
+}
+
+/* Custom embedded university link style */
+.education-card .company a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.education-card .company a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}

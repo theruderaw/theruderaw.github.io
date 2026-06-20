@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Sidebar from './components/Sidebar'
 import About from './pages/About'
 import Skills from './pages/Skills'
@@ -10,10 +10,17 @@ import GameOfLifeBackground from './components/GameOfLifeBackground'
 import HelpButton from './components/HelpButton'
 
 export default function App() {
+    // 1. Get the current location object
+    const location = useLocation();
+
+    // 2. Check if the current pathname is exactly the root ("/")
+    const isMain = location.pathname === '/';
+
     return (
         <div className="app-layout">
             <GameOfLifeBackground />
-            <Sidebar />
+            {/* 3. Pass the boolean down as the onmain prop */}
+            <Sidebar onMain={isMain} />
             <main className="main-content">
                 <Routes>
                     <Route path="/" element={<About />} />

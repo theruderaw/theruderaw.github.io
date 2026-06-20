@@ -64,12 +64,9 @@ export default function Skills() {
 
     return (
         <section className="page-with-effects">
-            <div className="aurora-container">
-                <div className="aurora-blob blob-1"></div>
-                <div className="aurora-blob blob-2"></div>
-            </div>
+
             <div className="page-content-wrapper">
-                <h2 className="page-title">Technical Skills</h2>
+                <h2 className="page-header">Technical Skills</h2>
                 <div className="skills-container">
                     {skillCategories.map((cat) => (
                         <SkillCategory

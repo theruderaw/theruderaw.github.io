@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import '../styles/help.css'
 
 export default function HelpButton() {
     const [isOpen, setIsOpen] = useState(false)
@@ -14,7 +15,7 @@ export default function HelpButton() {
     }
 
     return (
-        <div 
+        <div
             className="help-container"
             onMouseEnter={() => setIsOpen(true)}
             onMouseLeave={() => setIsOpen(false)}

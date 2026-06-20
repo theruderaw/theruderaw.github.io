@@ -1,63 +1,55 @@
-import React, { useState } from 'react'
-import '../styles/project.css'
-
-const projects = [
-    {
-        title: 'Safety Monitoring Helmet',
-        subtitle: 'Final Year Capstone Project',
-        description: 'Developed an IoT-enabled safety helmet featuring real-time heart rate monitoring, fall detection, and RFID-based user authentication.',
-        bullets: [
-            'Built the server architecture using FastAPI and PostgreSQL, implementing WebSockets.',
-            'Designed a responsive monitoring dashboard using ReactJS and Tailwind CSS.',
-        ],
-        tech: ['IoT', 'FastAPI', 'WebSockets', 'ReactJS', 'Tailwind CSS'],
-    },
-    {
-        title: 'Movie Recommendation System',
-        subtitle: 'NLP/AIML Project',
-        description: 'Built a recommendation engine using TF-IDF with bigrams over a comprehensive dataset of 35,000+ movies.',
-        bullets: [
-            'Developed modular training and storage scripts utilizing Scikit-Learn.',
-            'Optimized recommendations via normalized linear functions and Cosine Similarity.',
-        ],
-        tech: ['NLP', 'Scikit-Learn', 'TF-IDF', 'Python'],
-    },
-]
+import '../styles/projects.css'
 
 export default function Projects() {
-    const [expandedProject, setExpandedProject] = useState(null)
-
-    const toggleProject = (title) => {
-        if (expandedProject === title) {
-            setExpandedProject(null)
-        } else {
-            setExpandedProject(title)
-        }
-    }
-
     return (
-        <section>
-            <h2 className="page-title">Projects</h2>
-            <div className="projects-container">
-                {projects.map((proj) => (
-                    <div
-                        className={`project-tab ${expandedProject === proj.title ? 'expanded' : ''}`}
-                        key={proj.title}
-                        onClick={() => toggleProject(proj.title)}
-                    >
-                        <h3>{proj.title}</h3>
-                        <div className={`project-details-container ${expandedProject === proj.title ? 'open' : ''}`}>
-                            <p className="subtitle">{proj.subtitle}</p>
-                            <p>{proj.description}</p>
-                            <ul>
-                                {proj.bullets.map((b, i) => <li key={i}>{b}</li>)}
-                            </ul>
-                            <ul className="skills-list" style={{ marginTop: '1rem', justifyContent: 'center' }}>
-                                {proj.tech.map((t) => <li key={t}>{t}</li>)}
-                            </ul>
+        <section className="page-with-effects">
+            <div className="page-content-wrapper">
+                <h1 className="page-header">Projects</h1>
+
+                <div className="projects-grid">
+                    {/* Project Card 1 */}
+                    <div className="project-card">
+                        <div className="project-card-header">
+                            <h2 className="project-title-text">Safety Monitoring Helmet</h2>
+                            <span className="project-badge">Capstone Project</span>
+                        </div>
+                        <p className="project-desc">
+                            Developed an IoT-enabled safety helmet featuring real-time heart rate monitoring, fall detection, and RFID-based user authentication.
+                        </p>
+                        <ul className="project-bullets">
+                            <li>Built server architecture using <strong>FastAPI</strong> and <strong>PostgreSQL</strong>, implementing <strong>WebSockets</strong>.</li>
+                            <li>Designed a responsive monitoring dashboard using <strong>ReactJS</strong> and <strong>Tailwind CSS</strong>.</li>
+                        </ul>
+                        <div className="tech-chips">
+                            <span>IoT</span>
+                            <span>FastAPI</span>
+                            <span>WebSockets</span>
+                            <span>ReactJS</span>
+                            <span>Tailwind CSS</span>
                         </div>
                     </div>
-                ))}
+
+                    {/* Project Card 2 */}
+                    <div className="project-card">
+                        <div className="project-card-header">
+                            <h2 className="project-title-text">Movie Recommendation System</h2>
+                            <span className="project-badge accent">NLP / AIML</span>
+                        </div>
+                        <p className="project-desc">
+                            Built a recommendation engine using TF-IDF with bigrams over a comprehensive dataset of 35,000+ movies.
+                        </p>
+                        <ul className="project-bullets">
+                            <li>Developed modular training and storage scripts utilizing <strong>Scikit-Learn</strong>.</li>
+                            <li>Optimized recommendations via normalized linear functions and <strong>Cosine Similarity</strong>.</li>
+                        </ul>
+                        <div className="tech-chips">
+                            <span>NLP</span>
+                            <span>Scikit-Learn</span>
+                            <span>TF-IDF</span>
+                            <span>Python</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     )

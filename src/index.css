@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;600;700&display=swap');
 
 * {
     margin: 0;
@@ -8,20 +8,35 @@
 
 body {
     background-color: #121212;
-    color: #d8d8ff;
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
+    color: #ffffff;
+    /* Set global text color to solid white */
+    font-family: 'Libre Franklin', sans-serif;
+    /* Swapped to Libre Franklin */
+    line-height: 1.7;
+    /* Increased for better paragraph spacing */
     height: 100vh;
     overflow: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
 a {
-    color: #a8a8ff;
+    color: #ffffff;
+    /* Changed link color to white */
     text-decoration: none;
 }
 
 a:hover {
     text-decoration: underline;
+}
+
+/* Paragraph overrides for better breathing room */
+p {
+    color: #ffffff;
+    /* Force solid white */
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.7;
+    letter-spacing: 0.2px;
 }
 
 /* Layout */
@@ -30,7 +45,6 @@ a:hover {
     height: 100vh;
 }
 
-
 /* Main content */
 .main-content {
     margin-left: 280px;
@@ -38,86 +52,86 @@ a:hover {
     flex: 1;
 }
 
-
-
-/* Experience */
-.experience-card {
-    margin-bottom: 1.5rem;
-}
-
-.experience-card h2 {
-    font-size: 1.2rem;
+/* Headings and special font effects */
+.page-header {
+    font-family: 'Bitcount Prop Single', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
     color: #ffffff;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+
+    /* Crystalline / Chiseled White Glow Effect */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow:
+        0 0 4px rgba(255, 255, 255, 0.9),
+        0 0 12px rgba(255, 255, 255, 0.4),
+        2px 2px 0px rgba(0, 0, 0, 0.2);
+    /* Gives a tiny bit of 3D chiseled depth */
 }
 
-.experience-card .date {
-    color: #a8a8ff;
-    font-size: 0.9rem;
+/* Subtitle under the main name header */
+p.page-header {
+    font-family: 'Libre Franklin', sans-serif;
+    /* Keeps subtitle clean and neutral */
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #ffffff;
+    /* Set to solid white */
+    margin-bottom: 2.5rem;
+    text-shadow: none;
+    letter-spacing: 0.5px;
 }
 
-.experience-card .company {
-    color: #888;
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-}
-
-.experience-card ul {
-    padding-left: 1.5rem;
-    margin-top: 0.5rem;
-}
-
-.experience-card li {
-    margin-bottom: 0.4rem;
-}
-
-/* Contact form */
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.contact-form input,
-.contact-form textarea {
-    padding: 0.75rem;
-    border-radius: 4px;
-    border: 1px solid #444;
-    background: #2a2a35;
-    color: #fff;
-    font-family: 'Inter', sans-serif;
-}
-
-.contact-form textarea {
-    resize: none;
-}
-
-.contact-form button {
-    padding: 0.75rem 1rem;
-    background: #333;
-    color: #d8d8ff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-family: 'Inter', sans-serif;
-}
-
-.contact-form button:hover {
-    background: #444;
-}
-
-/* Contact info */
-.contact-info {
-    margin: 1rem 0;
-    line-height: 2;
-}
-
-/* Page headings */
 .page-title {
+    font-family: 'Bitcount Prop Single', sans-serif;
+    font-weight: 600;
     font-size: 1.5rem;
     color: #ffffff;
+    /* Fixed double hash syntax typo and set to white */
     margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    /* Subtle geometric divider line */
+    padding-bottom: 0.5rem;
+}
+
+/* "Say Hi" Button styling on About Page */
+.say-hi-btn {
+    display: inline-block;
+    margin-top: 2.5rem;
+    /* Pushes it down cleanly from your summary paragraph */
+    padding: 0.75rem 2rem;
+    background: #ffffff;
+    /* Solid white button structure */
+    color: #121212;
+    /* Rich dark text for sharp contrast */
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.say-hi-btn:hover {
+    background: #e2e8f0;
+    /* Soft off-white hover state */
+    text-decoration: none;
+    transform: translateY(-2px);
+    /* Distinct crisp lift up */
+
+    /* Elegant crystalline ambient glow matching your text themes */
+    box-shadow: 0 0 16px rgba(255, 255, 255, 0.4),
+        0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.say-hi-btn:active {
+    transform: translateY(0);
+    /* Returns down on click interaction */
 }
 
 /* Background effects */
@@ -141,7 +155,8 @@ a:hover {
     left: -2rem;
     right: -2rem;
     bottom: -2rem;
-    background-image: radial-gradient(rgba(216, 216, 255, 0.08) 1.2px, transparent 1.2px);
+    background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.2px, transparent 1.2px);
+    /* Matched dot grid color to faint white */
     background-size: 24px 24px;
     pointer-events: none;
     z-index: 1;
@@ -197,110 +212,4 @@ a:hover {
     100% {
         transform: translate(-30px, 40px) scale(0.9);
     }
-}
-
-/* Help Button / Game of Life Controls */
-.help-container {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    z-index: 100;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-.help-btn {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    background: #1e1e24;
-    border: 1px solid #333;
-    color: #d8d8ff;
-    font-size: 1.2rem;
-    font-weight: bold;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-}
-
-.help-btn:hover {
-    background: #2a2a35;
-    border-color: #d8d8ff;
-    transform: scale(1.1);
-}
-
-.help-modal {
-    position: absolute;
-    bottom: 3.2rem;
-    right: 0;
-    width: 280px;
-    background: rgba(30, 30, 36, 0.95);
-    border: 1px solid #333;
-    border-radius: 12px;
-    padding: 1.25rem;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    transition: all 0.3s ease;
-    opacity: 0;
-    transform: translateY(10px) scale(0.95);
-    pointer-events: none;
-}
-
-.help-modal.open {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    pointer-events: auto;
-}
-
-.help-modal::before {
-    content: '';
-    position: absolute;
-    bottom: -1.2rem;
-    left: 0;
-    right: 0;
-    height: 1.2rem;
-    background: transparent;
-}
-
-.help-modal h4 {
-    color: #ffffff;
-    margin: 0;
-    font-size: 1rem;
-}
-
-.help-modal p {
-    color: #888;
-    font-size: 0.8rem;
-    line-height: 1.4;
-    margin: 0;
-}
-
-.help-controls {
-    display: flex;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
-}
-
-.help-controls button {
-    flex: 1;
-    padding: 0.4rem;
-    font-size: 0.75rem;
-    border-radius: 4px;
-    border: 1px solid #444;
-    background: #2a2a35;
-    color: #d8d8ff;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.help-controls button:hover {
-    background: #333;
-    border-color: #d8d8ff;
 }

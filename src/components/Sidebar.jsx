@@ -1,13 +1,17 @@
 import { NavLink } from 'react-router-dom'
 import '../styles/sidebar.css'
 
-export default function Sidebar() {
+export default function Sidebar({ onMain = false }) {
     return (
         <nav className="sidebar">
-            <div className="sidebar-header">
-                <h1>Rudra Sen Mallik</h1>
-                <p>Backend Developer & Software Engineer</p>
-            </div>
+            {/* 1. Wrapped headers inside a single header container block */}
+            {!onMain && (
+                <div className="sidebar-header">
+                    <h1>Rudra Sen Mallik</h1>
+                    <p>Backend Developer & Software Engineer</p>
+                </div>
+            )}
+
             <div className="sidebar-links">
                 <NavLink to="/">About</NavLink>
                 <NavLink to="/skills">Skills</NavLink>
@@ -16,6 +20,7 @@ export default function Sidebar() {
                 <NavLink to="/projects">Projects</NavLink>
                 <NavLink to="/contact">Contact</NavLink>
             </div>
+
             <a href="assets/resume.pdf" download className="resume-btn">
                 ⬇ Download Resume
             </a>

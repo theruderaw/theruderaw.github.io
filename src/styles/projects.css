@@ -1,0 +1,132 @@
+/* Layout Wrapper Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+/* Glassmorphic Project Card Structure */
+.project-card {
+    background: rgba(30, 30, 36, 0.45);
+    /* Soft dark crystalline backdrop */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    /* Left aligned text for crisp tracking reading */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    /* Smooth transition mappings */
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+/* Elegant Static Hover Effect */
+.project-card:hover {
+    background: rgba(40, 40, 48, 0.6);
+    /* Slightly lightened slate background */
+    border-color: rgba(255, 255, 255, 0.25);
+    /* Sharp glowing white boundary lines */
+    transform: translateY(-4px);
+    /* Moves card up perfectly */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(255, 255, 255, 0.04);
+}
+
+/* Card Typography Header Group */
+.project-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 0.75rem;
+}
+
+.project-title-text {
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.project-badge {
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #ffffff;
+    opacity: 0.6;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.project-badge.accent {
+    color: #a8a8ff;
+    /* Your signature blue/purple highlight link style color */
+    opacity: 1;
+}
+
+/* Card Body Content */
+.project-desc {
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #ffffff;
+    opacity: 0.9;
+    margin-bottom: 1rem;
+}
+
+.project-bullets {
+    padding-left: 1.25rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+    /* Pushes tech chips to bottom of cards uniformly */
+}
+
+.project-bullets li {
+    font-family: 'Libre Franklin', sans-serif;
+    color: #ffffff;
+    opacity: 0.8;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+/* Tech Pill Chip Groupings */
+.tech-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+.tech-chips span {
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.25rem 0.65rem;
+    border-radius: 4px;
+    transition: border-color 0.2s ease;
+}
+
+.project-card:hover .tech-chips span {
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Responsive breakpoint fallback */
+@media (max-width: 1150px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        /* Snaps safely to single-column stacking for small viewports */
+    }
+}
