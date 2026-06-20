@@ -28,23 +28,31 @@
 }
 
 /* --- Mobile Breakpoint Rules --- */
+/* --- Mobile Breakpoint Rules --- */
 @media (max-width: 768px) {
     .sidebar {
         position: fixed;
         top: 0;
         left: 0;
         height: 100vh;
-        width: 260px;
+
+        /* 1. Change width to a responsive viewport width instead of a tight pixel size */
+        width: 75vw;
+        max-width: 320px;
+        /* Prevents it from getting absurdly huge on small tablets */
+
+        /* 2. Keeps it completely hidden to the left by default */
         transform: translateX(-100%);
-        /* This hides it off-screen to the left */
         transition: transform 0.3s ease-in-out;
         z-index: 100;
+
+        /* Optional: Add smooth internal padding adjustments if text looks crowded */
+        padding: 3rem 2rem;
     }
 
-    /* When the 'open' class is applied via the toggle state */
     .sidebar.open {
         transform: translateX(0);
-        /* This slides it in */
+        /* Slides out smoothly */
     }
 
     /* Pushes your main content down so the floating menu button doesn't overlap text */
