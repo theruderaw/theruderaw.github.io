@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import Sidebar from './components/Sidebar'
 import About from './pages/About'
@@ -16,11 +17,28 @@ export default function App() {
     // 2. Check if the current pathname is exactly the root ("/")
     const isMain = location.pathname === '/';
 
+    // State to track if the sidebar drawer is open on mobile views
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+    const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+    const closeSidebar = () => setIsSidebarOpen(false);
+
     return (
         <div className="app-layout">
             <GameOfLifeBackground />
-            {/* 3. Pass the boolean down as the onmain prop */}
-            <Sidebar onMain={isMain} />
+
+            {/* Mobile-only hamburger toggle button */}
+            <button className="sidebar-toggle" onClick={toggleSidebar}>
+                {isSidebarOpen ? '✕' : '☰'}
+            </button>
+
+            {/* 3. Pass both onMain and mobile visibility props down */}
+            <Sidebar
+                onMain={isMain}
+                isOpen={isSidebarOpen}
+                onToggle={closeSidebar}
+            />
+
             <main className="main-content">
                 <Routes>
                     <Route path="/" element={<About />} />
