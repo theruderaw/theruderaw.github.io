@@ -33,7 +33,7 @@ export default function Projects() {
                     <div className="project-card">
                         <div className="project-card-header">
                             <h2 className="project-title-text">Movie Recommendation System</h2>
-                            <span className="project-badge accent">NLP / AIML</span>
+                            <span className="project-badge">NLP / AIML</span>
                         </div>
                         <p className="project-desc">
                             Built a recommendation engine using TF-IDF with bigrams over a comprehensive dataset of 35,000+ movies.
