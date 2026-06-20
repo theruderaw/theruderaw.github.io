@@ -20,7 +20,7 @@ export default function HelpButton() {
             onMouseLeave={() => setIsOpen(false)}
         >
             <div className={`help-modal ${isOpen ? 'open' : ''}`}>
-                <h4>Conway's Game of Life</h4>
+                <h4><a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank" rel="noopener noreferrer" className="gol-link">Conway's Game of Life</a></h4>
                 <p>
                     The background runs a cellular automaton simulation. Move or click your cursor across the page to seed new active cell colonies!
                 </p>
