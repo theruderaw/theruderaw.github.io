@@ -24,6 +24,7 @@ export default function Sidebar({ onMain = false, isOpen = false, onToggle }) {
                     <NavLink to="/education" onClick={onToggle}>Education</NavLink>
                     <NavLink to="/projects" onClick={onToggle}>Projects</NavLink>
                     <NavLink to="/contact" onClick={onToggle}>Contact</NavLink>
+                    <a href="https://blog-frontend-swart-one.vercel.app/" target="_blank" rel="noopener noreferrer" onClick={onToggle}>Blog</a>
                 </div>
 
                 <a href="assets/resume.pdf" download className="resume-btn">
